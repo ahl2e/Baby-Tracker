@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
-import {createStore} from 'redux';
+import configureStore from './frontend/store/store';
 import AppContainer from './AppContainer';
 import RootReducer from './frontend/reducers/root_reducer';
 
 
-const store = createStore(RootReducer);
+const store = configureStore(RootReducer);
 
 export default function App() {
   return (
