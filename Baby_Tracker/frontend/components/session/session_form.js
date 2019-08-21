@@ -7,8 +7,9 @@ class SessionForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      username : "Adam",
-      password: ""
+      username : "Adam615",
+      password: "password",
+      email: ""
     };
   }
 
@@ -18,9 +19,10 @@ class SessionForm extends React.Component{
     });
   }
 
-  onLogin(){
-
-    console.log('hi');
+  onSubmit(){
+    debugger
+    const user = Object.assign({}, this.state);
+    this.props.dispatchForm(user);
   }
 
   render(){
@@ -44,8 +46,8 @@ class SessionForm extends React.Component{
         />
 
         <Button
-          onPress={this.onLogin}
-          title="Log In"
+          onPress={this.onSubmit.bind(this)}
+          title={this.props.formType}
           color="#841584"
           Log In >
         </Button>

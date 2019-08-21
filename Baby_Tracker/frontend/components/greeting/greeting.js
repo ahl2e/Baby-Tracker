@@ -21,6 +21,12 @@ class Greeting extends React.Component {
             this.props.navigation.navigate('LoginForm')
           }
         />
+          <Button
+          title="Sign Up"
+          onPress={() =>
+            this.props.navigation.navigate('SignupForm')
+          }
+        />
       </View>
     )
   }
