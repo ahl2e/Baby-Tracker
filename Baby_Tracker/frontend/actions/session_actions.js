@@ -7,8 +7,7 @@ export const UPDATE_USER = 'UPDATE_USER';
 
 
 export const login = (user) => dispatch => {
-  return ApiSessionUtil.login(user).then(user => dispatch(receiveCurrentUser(user)),
-  error => dispatch(receiveErrors(error.responseJSON)));
+  return ApiSessionUtil.login(user).then(user => dispatch(receiveCurrentUser(user));
 };
 
 export const signup = (user) => dispatch => (

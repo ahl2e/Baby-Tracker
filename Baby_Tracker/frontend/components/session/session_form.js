@@ -9,7 +9,8 @@ class SessionForm extends React.Component{
     this.state = {
       username : "Adam615",
       password: "password",
-      email: ""
+      email: "",
+      user: props.session
     };
   }
 
@@ -20,14 +21,17 @@ class SessionForm extends React.Component{
   }
 
   onSubmit(){
-    debugger
     const user = Object.assign({}, this.state);
     this.props.dispatchForm(user);
   }
 
-  render(){
+  logOut(){
+    this.props.SignOut();
+  }
 
+  render(){
     let info = this.state;
+    debugger
     return (
       <View>
         <Text> Username</Text>
@@ -50,6 +54,12 @@ class SessionForm extends React.Component{
           title={this.props.formType}
           color="#841584"
           Log In >
+        </Button>
+        <Button
+          onPress={this.onSubmit.bind(this)}
+          title= 'Sign Out'
+          color="#841584"
+          SignOut >
         </Button>
       </View>
     );

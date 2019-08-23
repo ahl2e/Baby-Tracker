@@ -14,7 +14,7 @@ class Greeting extends React.Component {
   render(){
     return(
       <View style = {styles.container}>
-        <Text> Baby Tracker </Text>
+        <Text> Baby Tracker</Text>
           <Button
           title="Log In"
           onPress={() =>

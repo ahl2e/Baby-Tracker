@@ -5,16 +5,18 @@ import {login, logout, signup} from '../../actions/session_actions';
 // you can take the actions you don't need out.  They can just live here for now.
 
 
-const mapStateToProps =({errors}) => {
+const mapStateToProps =(state) => {
   return{
-    errors: errors.session,
+    errors: state.errors.session,
     formType: 'Log In',
+    user: state.entities.user
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return{
-    dispatchForm : (user) => dispatch(login(user))
+    dispatchForm : (user) => dispatch(login(user)),
+    logOut : () => dispatch(logout())
   };
 };
 
